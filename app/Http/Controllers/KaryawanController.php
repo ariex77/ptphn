@@ -468,4 +468,14 @@ class KaryawanController extends Controller
             ], 500);
         }
     }
+
+    public function idcard($nik)
+    {
+        $nik = Crypt::decrypt($nik);
+        $karyawan = Karyawan::where('nik', $nik)->first();
+        $data['karyawan'] = $karyawan;
+        $generalsetting = Pengaturanumum::where('id', 1)->first();
+        $data['generalsetting'] = $generalsetting;
+        return view('datamaster.karyawan.idcard', $data);
+    }
 }

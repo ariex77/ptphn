@@ -62,9 +62,9 @@
         <label for="exampleFormControlInput1" style="font-weight: 600" class="form-label">Status Karyawan</label>
         <select name="status_karyawan" id="status_karyawan" class="form-select">
             <option value="">Status Karyawan</option>
-            <option value="K" {{ $karyawan->status_karyawan == 'K' ? 'selected' : '' }}>Kontrak</option>
-            <option value="T" {{ $karyawan->status_karyawan == 'T' ? 'selected' : '' }}>Tetap</option>
-            <option value="O" {{ $karyawan->status_karyawan == 'O' ? 'selected' : '' }}>Outsourcing</option>
+            <option value="K" {{ $karyawan->status_karyawan == 'K' ? 'selected' : '' }}>PPPK</option>
+            <option value="T" {{ $karyawan->status_karyawan == 'T' ? 'selected' : '' }}>PNS</option>
+            <option value="O" {{ $karyawan->status_karyawan == 'O' ? 'selected' : '' }}>Non ASN</option>
         </select>
     </div>
 
@@ -94,6 +94,6 @@
     $(function() {
 
         $(".flatpickr-date").flatpickr();
-        $('#nik').mask('00.00.000');
+        $('#nik').mask('00000000000000000000');
     });
 </script>

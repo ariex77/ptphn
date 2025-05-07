@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Jamkerja;
 use App\Models\Karyawan;
+use App\Models\LogAbsen;
 use App\Models\Presensi;
 use App\Models\Setjamkerjabydate;
 use App\Models\Setjamkerjabyday;
@@ -152,5 +153,15 @@ class PresensiController extends Controller
                 return response()->json(['status' => false, 'message' => $e->getMessage()], 400);
             }
         }
+    }
+
+
+    public function log(Request $request)
+    {
+        LogAbsen::create([
+            'data_raw' => json_encode($request->all())
+        ]);
+
+        return response()->json(['status' => 'OK']);
     }
 }

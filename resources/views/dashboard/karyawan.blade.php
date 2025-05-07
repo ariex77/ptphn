@@ -282,6 +282,21 @@
                 </div>
             </div>
         </div>
+        <div class="row mt-2">
+            <div class="col-3">
+                <a href="{{ route('karyawan.idcard', Crypt::encrypt($karyawan->nik)) }}">
+                    <div class="card">
+                        <div class="card-body text-center" style="padding: 5px 5px !important; line-height:0.8rem">
+                            <img src="{{ asset('assets/template/img/3d/card.webp') }}" alt="" style="width: 50px" class="mb-0">
+                            <br>
+                            <span style="font-size: 0.8rem; font-weight:500" class="mb-2">
+                                ID Card
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
     <div id="histori-section">
         <div class="tab-pane fade show active" id="pilled" role="tabpanel">

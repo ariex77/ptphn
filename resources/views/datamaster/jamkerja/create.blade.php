@@ -45,18 +45,18 @@
 <script src="{{ asset('assets/vendor/libs/flatpickr/flatpickr.js') }}"></script>
 <script>
     $(document).ready(function() {
-        function toogleIstirahat() {
-            if ($('#istirahat').val() == 1) {
-                $('#sectionIstirahat').show();
-            } else {
-                $('#sectionIstirahat').hide();
-            }
-        }
-        toogleIstirahat();
+        // function toogleIstirahat() {
+        //     if ($('#istirahat').val() == 1) {
+        //         $('#sectionIstirahat').show();
+        //     } else {
+        //         $('#sectionIstirahat').hide();
+        //     }
+        // }
+        // toogleIstirahat();
 
-        $('#istirahat').on('change', function() {
-            toogleIstirahat();
-        });
+        // $('#istirahat').on('change', function() {
+        //     toogleIstirahat();
+        // });
 
         $("#jam_masuk,#jam_pulang,#jam_awal_istirahat,#jam_akhir_istirahat").mask("00:00");
     });

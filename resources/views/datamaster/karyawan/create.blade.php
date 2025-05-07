@@ -56,8 +56,9 @@
         <label for="exampleFormControlInput1" style="font-weight: 600" class="form-label">Status Karyawan</label>
         <select name="status_karyawan" id="pendidikan_terakhir" class="form-select">
             <option value="">Status Karyawan</option>
-            <option value="K">Kontrak</option>
-            <option value="T">Tetap</option>
+            <option value="K">PPPK</option>
+            <option value="T">PNS</option>
+            <option value="O">Non ASN</option>
         </select>
     </div>
     <x-input-file name="foto" label="Foto" />
@@ -76,6 +77,6 @@
     $(function() {
 
         $(".flatpickr-date").flatpickr();
-        $('#nik').mask('00.00.000');
+        $('#nik').mask('00000000000000000000');
     });
 </script>

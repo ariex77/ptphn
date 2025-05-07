@@ -14,7 +14,7 @@
             <tr>
                 <td>
                     @if ($generalsetting->logo && Storage::exists('public/logo/' . $generalsetting->logo))
-                        <img src="{{ asset('img/logo/' . $generalsetting->logo) }}" alt="Logo Perusahaan" style="max-width: 100px;">
+                        <img src="{{ asset('storage/logo/' . $generalsetting->logo) }}" alt="Logo Perusahaan" style="max-width: 100px;">
                     @else
                         <img src="https://placehold.co/100x100?text=Logo" alt="Logo Default" style="max-width: 100px;">
                     @endif
@@ -42,7 +42,7 @@
                     <th rowspan="3">Nama Karyawan</th>
                     <th rowspan="3">Jabatan</th>
                     <th rowspan="3">Dept</th>
-                    
+                    <th rowspan="3">Kode Cabang</th>
                     <th colspan="{{ $jmlhari }}">Tanggal</th>
                     <th rowspan="3">Denda</th>
                     <th rowspan="3">Pot. Jam</th>
@@ -81,7 +81,7 @@
                         <td style="width:5%">{{ $d['nama_karyawan'] }}</td>
                         <td style="width:5%">{{ $d['nama_jabatan'] }}</td>
                         <td style="width:5%">{{ $d['nama_dept'] }}</td>
-                       
+                        <td style="width:5%">{{ $d['kode_cabang'] }}</td>
                         @php
                             $total_denda = 0;
                             $total_potongan_jam = 0;
@@ -227,7 +227,7 @@
                                     $bgcolor = 'red';
                                     $textcolor = 'white';
                                     $ket = '';
-
+                                    //var_dump($ceklibur);
                                     if (!empty($ceklibur)) {
                                         $bgcolor = 'green';
                                         $textcolor = 'white';

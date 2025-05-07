@@ -44,10 +44,17 @@ class LaporanController extends Controller
                 $bulan = $request->bulan;
                 $tahun = $request->tahun;
             }
+
+            // Menambahkan nol di depan bulan jika bulan kurang dari 10
+
+            $bulan = str_pad($bulan, 2, '0', STR_PAD_LEFT);
             $periode_dari = $tahun . '-' . $bulan . '-' . $periode_laporan_dari;
             $periode_sampai = $request->tahun . '-' . $request->bulan . '-' . $periode_laporan_sampai;
         } else {
-            $periode_dari = $request->tahun . '-' . $request->bulan . '-01';
+            // Menambahkan nol di depan bulan jika bulan kurang dari 10
+
+            $bulan = str_pad($request->bulan, 2, '0', STR_PAD_LEFT);
+            $periode_dari = $request->tahun . '-' . $bulan . '-01';
             $periode_sampai = date('Y-m-t', strtotime($periode_dari));
         }
 
@@ -140,6 +147,7 @@ class LaporanController extends Controller
         $data['jmlhari'] = hitungJumlahHari($periode_dari, $periode_sampai) + 1;
         $data['denda_list'] = Denda::all()->toArray();
         $data['datalibur'] = getdatalibur($periode_dari, $periode_sampai);
+
         $data['generalsetting'] = $generalsetting;
         if (isset($_POST['exportButton'])) {
             header("Content-type: application/vnd-ms-excel");

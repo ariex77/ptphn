@@ -73,6 +73,8 @@
                                 $route = 'izinabsen.delete';
                             } elseif ($d->ket == 's') {
                                 $route = 'izinsakit.delete';
+                            } elseif ($d->ket == 'c') {
+                                $route = 'izincuti.delete';
                             }
                         @endphp
                         <form method="POST" name="deleteform" class="deleteform me-1 mb-1" action="{{ route($route, Crypt::encrypt($d->kode)) }}">

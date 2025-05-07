@@ -25,9 +25,9 @@ class StatusKaryawanChart
 
         // Mapping status singkatan ke nama lengkap
         $statusLabels = [
-            'T' => 'Tetap',
-            'K' => 'Kontrak',
-            'O' => 'Outsourcing'
+            'T' => 'PNS',
+            'K' => 'PPPK',
+            'O' => 'Non ASN'
         ];
 
         // Konversi kode status ke label lengkap

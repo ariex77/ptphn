@@ -120,11 +120,6 @@
                     </li>
                     <li class="d-flex align-items-center mb-3">
                         <i class="ti ti-building text-heading"></i><span class="fw-medium mx-2 text-heading">
-                            Perusahaan:</span>
-                        <span>{{ $karyawan->kode_perusahaan == 'MP' ? 'Makmur Permata' : 'Pacific' }} </span>
-                    </li>
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="ti ti-building text-heading"></i><span class="fw-medium mx-2 text-heading">
                             Kantor:</span>
                         <span>{{ $karyawan->nama_cabang }} </span>
                     </li>
@@ -138,16 +133,7 @@
                             Jabatan:</span>
                         <span>{{ $karyawan->nama_jabatan }} </span>
                     </li>
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="ti ti-user text-heading"></i><span class="fw-medium mx-2 text-heading">
-                            Group:</span>
-                        <span>{{ $karyawan->nama_group }} </span>
-                    </li>
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="ti ti-user text-heading"></i><span class="fw-medium mx-2 text-heading">
-                            Klasifikasi:</span>
-                        <span>{{ $karyawan->klasifikasi }} </span>
-                    </li>
+
                     <li class="d-flex align-items-center mb-3">
                         <i class="ti ti-calendar text-heading"></i><span class="fw-medium mx-2 text-heading">
                             Tanggal Masuk:</span>

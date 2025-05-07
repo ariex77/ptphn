@@ -61,35 +61,45 @@
 
                 jam_awal_istirahat: {
                     validators: {
-                        notEmpty: {
-                            message: 'Jam Awal Istirahat Harus Diisi'
+                        callback: {
+                            message: 'Jam Awal Istirahat Harus Diisi',
+                            callback: function (input) {
+                                const istirahatValue = document.querySelector('[name="istirahat"]').value;
+                                if (istirahatValue === '1') {
+                                    return input.value !== '';
+                                }
+                                return true;
+                            }
                         },
                         regexp: {
                             regexp: /^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$/,
-                            message: 'Format Jam Awal Istirahat harus hh:mm'
-                        },
-                        condition: {
-                            field: 'istirahat',
-                            operator: 'equals',
-                            value: '1',
-                            message: 'Istirahat harus dipilih'
+                            message: 'Format Jam Awal Istirahat harus hh:mm',
+                            enabled: function () {
+                                const istirahatValue = document.querySelector('[name="istirahat"]').value;
+                                return istirahatValue === '1';
+                            }
                         }
                     }
                 },
                 jam_akhir_istirahat: {
                     validators: {
-                        notEmpty: {
-                            message: 'Jam Akhir Istirahat Harus Diisi'
+                        callback: {
+                            message: 'Jam Akhir Istirahat Harus Diisi',
+                            callback: function (input) {
+                                const istirahatValue = document.querySelector('[name="istirahat"]').value;
+                                if (istirahatValue === '1') {
+                                    return input.value !== '';
+                                }
+                                return true;
+                            }
                         },
                         regexp: {
                             regexp: /^(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9])$/,
-                            message: 'Format Jam Akhir Istirahat harus hh:mm'
-                        },
-                        condition: {
-                            field: 'istirahat',
-                            operator: 'equals',
-                            value: '1',
-                            message: 'Istirahat harus dipilih'
+                            message: 'Format Jam Akhir Istirahat harus hh:mm',
+                            enabled: function () {
+                                const istirahatValue = document.querySelector('[name="istirahat"]').value;
+                                return istirahatValue === '1';
+                            }
                         }
                     }
                 },
@@ -119,7 +129,6 @@
                     rowSelector: '.mb-3'
                 }),
                 submitButton: new FormValidation.plugins.SubmitButton(),
-
                 defaultSubmit: new FormValidation.plugins.DefaultSubmit(),
                 autoFocus: new FormValidation.plugins.AutoFocus()
             },
@@ -128,6 +137,13 @@
                     if (e.element.parentElement.classList.contains('input-group')) {
                         e.element.parentElement.insertAdjacentElement('afterend', e.messageElement);
                     }
+                });
+
+                // Tambahkan event listener untuk select istirahat
+                document.querySelector('[name="istirahat"]').addEventListener('change', function () {
+                    // Revalidate jam_awal_istirahat dan jam_akhir_istirahat
+                    fv.revalidateField('jam_awal_istirahat');
+                    fv.revalidateField('jam_akhir_istirahat');
                 });
             }
         });
