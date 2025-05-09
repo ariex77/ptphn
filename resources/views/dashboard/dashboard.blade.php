@@ -16,7 +16,7 @@
                             <div class="d-flex justify-content-between align-items-start card-widget-1 border-end pb-4 pb-sm-0">
 
                                 <div>
-                                    <p class="mb-1">Data Karyawn Aktif</p>
+                                    <p class="mb-1">Data Karyawan Aktif</p>
                                     <h4 class="mb-1">{{ $status_karyawan->jml_aktif }}</h4>
                                 </div>
                                 <img src="{{ asset('assets/img/illustrations/karyawan1.png') }}" height="70" alt="view sales" class="me-3">
