@@ -18,14 +18,8 @@ return new class extends Migration
             $table->string('telepon')->nullable();
             $table->string('total_jam_bulan')->nullable();
             $table->boolean('denda')->default(false);
-            $table->boolean('face_recognition')->default(false);
-            $table->string('periode_laporan_dari')->nullable();
-            $table->string('periode_laporan_sampai')->nullable();
-            $table->boolean('periode_laporan_next_bulan')->default(false);
-            $table->string('cloud_id')->nullable();
-            $table->string('api_key')->nullable();
-            $table->string('logo')->nullable();
-            $table->string('domain_email')->nullable();
+
+
             $table->timestamps();
         });
     }
