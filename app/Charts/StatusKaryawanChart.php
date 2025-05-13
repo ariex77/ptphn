@@ -27,7 +27,7 @@ class StatusKaryawanChart
         $statusLabels = [
             'T' => 'PNS',
             'K' => 'PPPK',
-            'O' => 'Non ASN'
+            'O' => 'Non ASNnnnn'
         ];
 
         // Konversi kode status ke label lengkap
